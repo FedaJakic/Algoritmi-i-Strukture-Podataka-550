@@ -1,0 +1,6 @@
+﻿  Vjezba7_Source.c
+E:\FESB_LABOVI\Strukture Podataka LABOVI\Vjezba7\Vjezba7\Vjezba7_Source.c(78,15): warning C4098: 'main': 'void' function returning a value
+E:\FESB_LABOVI\Strukture Podataka LABOVI\Vjezba7\Vjezba7\Vjezba7_Source.c(174,9): warning C4473: 'printf' : not enough arguments passed for format string
+E:\FESB_LABOVI\Strukture Podataka LABOVI\Vjezba7\Vjezba7\Vjezba7_Source.c(174,9): message : placeholders and their parameters expect 1 variadic arguments, but 0 were provided
+E:\FESB_LABOVI\Strukture Podataka LABOVI\Vjezba7\Vjezba7\Vjezba7_Source.c(174,9): message : the missing variadic argument 1 is required by format string '%d'
+  Vjezba7.vcxproj -> E:\FESB_LABOVI\Strukture Podataka LABOVI\Vjezba7\Vjezba7\Debug\Vjezba7.exe
