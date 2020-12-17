@@ -60,7 +60,7 @@ int main()
 			if (n < max)
 				n = Push(&head, GetRadnomValue(MIN, MAX), n);
 			else
-				printf("\r\nStog JE PUN!\n");
+				printf("\nStog JE PUN!\n");
 			PrintList(head.Next, n);
 			break;
 		case 2:
