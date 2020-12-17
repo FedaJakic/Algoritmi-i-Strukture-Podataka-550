@@ -109,7 +109,6 @@ Position AllocationOfMemory()
 int PrintList(Position P, int n)
 {
 	printf("\nElementi liste: \n");
-	//printf("\nU listi se nalazi %d elemenata, i to:\n", n);
 	while (n > 0)
 	{
 		printf(" %d", P->Element);
