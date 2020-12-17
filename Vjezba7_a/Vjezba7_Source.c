@@ -1,3 +1,4 @@
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
@@ -6,8 +7,8 @@
 #define SUCESS 0
 #define WARNING 1
 #define ERROR -1
-#define MIN 0
-#define MAX 10000
+#define MIN 10
+#define MAX 100
 
 struct SimulationStructure;
 typedef struct SimulationStructure* Position;
@@ -38,12 +39,12 @@ int main()
 
 	while (max < 5)
 	{
-		printf("\r\nUnesite velicinu stoga <5-100> : ");
-		scanf_s(" %d", &max);
+		printf("\nUnesite velicinu stoga <5-100> : ");
+		scanf(" %d", &max);
 		if (max < 5 || max > 100)
 		{
 			max = 0;
-			printf("\r\nPogresan unos!");
+			printf("\nPogresan unos!");
 		}
 	}
 
@@ -60,7 +61,7 @@ int main()
 			if (n < max)
 				n = Push(&head, GetRadnomValue(MIN, MAX), n);
 			else
-				printf("\r\nStog je popunjen!\r\n");
+				printf("\r\nStog JE PUN!\n");
 			PrintList(head.Next, n);
 			break;
 		case 2:
@@ -73,7 +74,7 @@ int main()
 			isRepeatable = false;
 			break;
 		default:
-			printf("\nPogresan izbor, pokusajte ponovno!\n\n");
+			printf("\nPogresan izbor, pokusajte ponovno!\n");
 		}
 	}
 
@@ -83,7 +84,7 @@ int main()
 int MainMenu() {
 	int izbor = 0;
 
-	printf("\n-------VJEZBA BROJ 7-------\n");
+	printf("\n-------VJEZBA BROJ 7a-------\n");
 	printf("---------Main Menu---------\n");
 	printf("______________________________\n");
 	printf("\n1 ---> Push na stog");
@@ -107,7 +108,8 @@ Position AllocationOfMemory()
 
 int PrintList(Position P, int n)
 {
-	printf("\nU listi se nalazi %d elemenata, i to:\n");
+	printf("\nElementi liste: \n");
+	//printf("\nU listi se nalazi %d elemenata, i to:\n", n);
 	while (n > 0)
 	{
 		printf(" %d", P->Element);
@@ -121,7 +123,7 @@ int PrintList(Position P, int n)
 int GetRadnomValue(int minValue, int maxValue)
 {
 	int value;
-	value = rand() % (maxValue - minValue) + minValue;
+	value = rand() % (maxValue - minValue + 1) + minValue;
 
 	return value;
 }
@@ -182,6 +184,3 @@ int Pop(Position P, int n)
 
 	return n;
 }
-
-
-
