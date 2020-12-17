@@ -22,8 +22,8 @@ struct SimulationStructure
 Position AllocationOfMemory();
 int PrintList(Position);
 int GetRadnomValue(int, int);
-void Push(Position, int);
-void Pop(Position);
+int Push(Position, int);
+int Pop(Position);
 int PrintList(Position);
 
 int main()
@@ -91,7 +91,7 @@ int GetRadnomValue(int maxValue, int minValue)
 	return value;
 }
 
-void Pop(Position P)
+int Pop(Position P)
 {
 	Position q;
 
@@ -106,6 +106,8 @@ void Pop(Position P)
 	}
 	else
 		printf("\nList is Empty.");
+	
+	return SUCESS;
 }
 
 int PrintList(Position P) {
@@ -125,7 +127,7 @@ int PrintList(Position P) {
 	return SUCESS;
 }
 
-void Push(Position P, int n)
+int Push(Position P, int n)
 {
 	Position q;
 
@@ -142,4 +144,6 @@ void Push(Position P, int n)
 		q->Next = P->Next;
 		P->Next = q;
 	}
+	
+	return SUCESS;
 }
