@@ -31,6 +31,7 @@ int main()
 	int izbor = 0;
 	int n = 0;
 	int max = 0;
+	bool isRepeatable = true;
 
 	head.Next = NULL;
 	head.Element = -1;
@@ -49,7 +50,7 @@ int main()
 	head.Next = NULL;
 	srand((unsigned)time(NULL));
 
-	while (izbor != 'K' && izbor != 'k')
+	while (isRepeatable)
 	{
 		izbor = MainMenu();
 
@@ -69,6 +70,7 @@ int main()
 			break;
 		case 0:
 			printf("\nIZLAZ IZ PROGRAMA\n");
+			isRepeatable = flase;
 			break;
 		default:
 			printf("\nPogresan izbor, pokusajte ponovno!\n\n");
