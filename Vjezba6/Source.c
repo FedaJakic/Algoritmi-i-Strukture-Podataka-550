@@ -102,14 +102,13 @@ int GetRadnomValue(int minValue, int maxValue)
 	return value;
 }
 
-int PrintList(Position P) 
+int PrintList(Position P)
 {
 	if (P == NULL) {
 		printf("LISTA JE PRAZNA!\n");
 		return SUCESS;
 	}
 	else {
-
 		printf("\n---- Elementi ----\n");
 		while (P != NULL) {
 			printf("Data: %d\n", P->data);
@@ -131,7 +130,7 @@ int PushOnStack(Position P)
 		printf("Error in allocation\n");
 		return ERROR;
 	}
-	else{
+	else {
 		q->data = GetRadnomValue(MIN_NUM, MAX_NUM);
 		q->Next = P->Next;
 		P->Next = q;
@@ -140,14 +139,13 @@ int PushOnStack(Position P)
 	return SUCESS;
 }
 
-int Pop(Position P) 
+int Pop(Position P)
 {
 
 	Position q;
 
 	if (P->Next != NULL) {
 		q = P->Next;
-		printf("\nDeleted value form Stack: %d\n", q->data);
 
 		P->Next = q->Next;
 		free(q);
@@ -156,7 +154,7 @@ int Pop(Position P)
 	return SUCESS;
 }
 
-int PushToRow(Position P) 
+int PushToRow(Position P)
 {
 
 	Position q;
@@ -171,7 +169,7 @@ int PushToRow(Position P)
 		printf("Error in allocation\n");
 		return ERROR;
 	}
-	else{
+	else {
 		q->data = GetRadnomValue(MIN_NUM, MAX_NUM);
 		q->Next = last->Next;
 		last->Next = q;
