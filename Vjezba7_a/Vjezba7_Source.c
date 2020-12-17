@@ -129,7 +129,7 @@ int Push(Position P, int x, int n)
 	static Position last;
 	Position q;
 
-	q = AllocationOfMemory;
+	q = AllocationOfMemory();
 	if (q)
 	{
 		if (P->Next == NULL)
