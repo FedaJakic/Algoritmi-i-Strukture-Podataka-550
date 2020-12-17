@@ -70,7 +70,7 @@ int main()
 			break;
 		case 0:
 			printf("\nIZLAZ IZ PROGRAMA\n");
-			isRepeatable = flase;
+			isRepeatable = false;
 			break;
 		default:
 			printf("\nPogresan izbor, pokusajte ponovno!\n\n");
