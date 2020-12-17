@@ -19,6 +19,7 @@ struct SimulationStructure
 	Position Next;
 };
 
+int MainMenu();
 Position AllocationOfMemory();
 int PrintList(Position);
 int GetRadnomValue(int, int);
@@ -41,7 +42,7 @@ int main()
 		switch (izbor)
 		{
 		case 1:
-			Push(&head, GetRadnomValue(MIN, MAX));
+			Push(&head, GetRadnomValue(MAX, MIN));
 			PrintList(head.Next);
 			break;
 		case 2:
@@ -86,7 +87,7 @@ Position AllocationOfMemory()
 int GetRadnomValue(int maxValue, int minValue)
 {
 	int value;
-	value = rand() % (maxValue - minValue) + minValue;
+	value = rand() % (maxValue - minValue + 1) + minValue;
 
 	return value;
 }
@@ -106,7 +107,7 @@ int Pop(Position P)
 	}
 	else
 		printf("\nList is Empty.");
-	
+
 	return SUCESS;
 }
 
@@ -118,7 +119,7 @@ int PrintList(Position P) {
 	else {
 		printf("\n---- Elementi liste ----\n");
 		while (P != NULL) {
-			printf(" ( %d %d )", P->data, P->Priority);
+			printf(" [ Data: %d Priority: %d ]\n\n", P->data, P->Priority);
 
 			P = P->Next;
 		}
@@ -135,8 +136,7 @@ int Push(Position P, int n)
 	if (q)
 	{
 		q->data = n;
-		q->Priority = GetRadnomValue(1, 5);
-		printf("\r\nNa listu se sprema ( %d %d )", q->data, q->Priority);
+		q->Priority = GetRadnomValue(5, 1);
 
 		while (P->Next != NULL && P->Next->Priority >= q->Priority)
 			P = P->Next;
@@ -144,6 +144,6 @@ int Push(Position P, int n)
 		q->Next = P->Next;
 		P->Next = q;
 	}
-	
+
 	return SUCESS;
 }
