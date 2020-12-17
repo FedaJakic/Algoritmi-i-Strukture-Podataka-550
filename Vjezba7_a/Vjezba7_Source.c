@@ -35,7 +35,6 @@ int main()
 	bool isRepeatable = true;
 
 	head.Next = NULL;
-	head.Element = -1;
 
 	while (max < 5)
 	{
